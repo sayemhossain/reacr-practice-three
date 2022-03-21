@@ -1,4 +1,5 @@
 import React from "react";
+import { addToDb } from "../../Utilities/fakeDb";
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
@@ -6,7 +7,7 @@ const Cosmetic = (props) => {
 
   //adding localStorage
   const addToCart = (id) => {
-    localStorage.setItem(id, 1);
+    addToDb(id);
   };
 
   return (

@@ -15,13 +15,26 @@ const addToDb = (id) => {
   if (quantity) {
     const newQuantity = quantity + 1;
     shoppingCart[id] = newQuantity;
-    // localStorage.setItem(id, newQuantity);
   } else {
     shoppingCart[id] = 1;
-    // localStorage.setItem(id, 1);
   }
   localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
 };
-//remove database
 
-export { addToDb };
+//remove database
+const removeFormDb = (id) => {
+  const storedCart = localStorage.getItem("shopping-cart");
+  const shoppingCart = JSON.parse(storedCart);
+  if (storedCart) {
+    if (id in shoppingCart) {
+      delete shoppingCart[id];
+      localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+    }
+  }
+};
+
+//delete cart
+const deleteShoppingCart = () => {
+  localStorage.removeItem("shopping-cart");
+};
+export { addToDb, removeFormDb, deleteShoppingCart };

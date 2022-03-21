@@ -1,5 +1,9 @@
 import React from "react";
-import { addToDb } from "../../Utilities/fakeDb";
+import {
+  addToDb,
+  deleteShoppingCart,
+  removeFormDb,
+} from "../../Utilities/fakeDb";
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
@@ -11,7 +15,11 @@ const Cosmetic = (props) => {
   };
   //remove cart
   const removeFormCart = (id) => {
-    console.log("removing", id);
+    removeFormDb(id);
+  };
+  //delete cart
+  const deleteCart = () => {
+    deleteShoppingCart();
   };
   return (
     <div className="single-cosmetic">
@@ -32,6 +40,7 @@ const Cosmetic = (props) => {
       >
         Remove cart
       </button>
+      <button onClick={deleteCart}>Delete total cart</button>
     </div>
   );
 };

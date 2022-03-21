@@ -22,7 +22,7 @@ const Cosmetic = (props) => {
       >
         Add to cart
       </button>
-      <button>Remove cat</button>
+      <button>Remove cart</button>
     </div>
   );
 };

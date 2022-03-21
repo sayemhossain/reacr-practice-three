@@ -9,7 +9,10 @@ const Cosmetic = (props) => {
   const addToCart = (id) => {
     addToDb(id);
   };
-
+  //remove cart
+  const removeFormCart = (id) => {
+    console.log("removing", id);
+  };
   return (
     <div className="single-cosmetic">
       <h2>Name: {name} </h2>
@@ -22,7 +25,13 @@ const Cosmetic = (props) => {
       >
         Add to cart
       </button>
-      <button>Remove cart</button>
+      <button
+        onClick={() => {
+          removeFormCart(id);
+        }}
+      >
+        Remove cart
+      </button>
     </div>
   );
 };

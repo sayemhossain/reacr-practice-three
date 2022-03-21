@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Cosmetic from "../Cosmetic/Cosmetic";
+import "./Cosmetics.css";
 
 const Cosmetics = () => {
   const [cosmetics, setCosmetics] = useState([]);
@@ -14,9 +15,11 @@ const Cosmetics = () => {
   return (
     <div>
       <h1>Welcome to my Cosmetics Store</h1>
-      {cosmetics.map((cosmetic) => (
-        <Cosmetic key={cosmetic.id} cosmetic={cosmetic}></Cosmetic>
-      ))}
+      <div className="all-cosmetics">
+        {cosmetics.map((cosmetic) => (
+          <Cosmetic key={cosmetic.id} cosmetic={cosmetic}></Cosmetic>
+        ))}
+      </div>
     </div>
   );
 };

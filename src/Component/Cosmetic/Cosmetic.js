@@ -3,9 +3,12 @@ import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
   const { name, price, id } = props.cosmetic;
+
+  //adding localStorage
   const addToCart = (id) => {
-    console.log("Item added", id);
+    localStorage.setItem(id, 1);
   };
+
   return (
     <div className="single-cosmetic">
       <h2>Name: {name} </h2>

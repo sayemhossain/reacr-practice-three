@@ -40,7 +40,7 @@ const Cosmetic = (props) => {
       >
         Remove cart
       </button>
-      <button onClick={deleteCart}>Delete total cart</button>
+      <button onClick={deleteCart}>Delete total cart form database</button>
     </div>
   );
 };
